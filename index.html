@@ -2,17 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Interface Java Web</title>
+    <title>Mon App Java sur le Web</title>
     <script src="coi-serviceworker.min.js"></script>
     <script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
 </head>
-<body style="margin: 0; background: #000;">
+<body style="margin: 0; overflow: hidden; background: #222;">
+
     <div id="container" style="width: 100vw; height: 100vh;"></div>
 
-    <script type="module">
-        await cheerpjInit();
-        cheerpjCreateDisplay(-1, -1, document.getElementById("container"));
-        await cheerpjRunJar("/app/equipe.jar");
+    <script>
+        (async function() {
+            await cheerpjInit();
+
+            cheerpjCreateDisplay(-1, -1, document.getElementById("container"));
+            await cheerpjRunJar("/app/equipe.jar");
+        })();
     </script>
 </body>
 </html>
