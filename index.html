@@ -1,6 +1,22 @@
-<script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
-<script>
-  cheerpjInit();
-  cheerpjCreateDisplay(1920, 1080);
-  cheerpjRunJar("equipe.jar");
-</script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CNC design</title>
+    <script src="coi-serviceworker.js"></script>
+    <script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden; background: #222;">
+
+    <div id="container" style="width: 100vw; height: 100vh;"></div>
+
+    <script>
+        (async function() {
+            // 3. Initialisation asynchrone (obligatoire en v3)
+            await cheerpjInit();
+            cheerpjCreateDisplay(-1, -1, document.getElementById("container"));
+            await cheerpjRunJar("/app/equipe.jar");
+        })();
+    </script>
+</body>
+</html>
