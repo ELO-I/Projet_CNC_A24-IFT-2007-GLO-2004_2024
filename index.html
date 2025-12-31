@@ -2,21 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>CNC design</title>
-    <script src="coi-serviceworker.js"></script>
-    <script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
+    <title>Interface Java Web</title>
+    <script src="coi-serviceworker.min.js"></script>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
 </head>
-<body style="margin: 0; overflow: hidden; background: #222;">
-
+<body style="margin: 0; background: #000;">
     <div id="container" style="width: 100vw; height: 100vh;"></div>
 
-    <script>
-        (async function() {
-            // 3. Initialisation asynchrone (obligatoire en v3)
-            await cheerpjInit();
-            cheerpjCreateDisplay(-1, -1, document.getElementById("container"));
-            await cheerpjRunJar("/app/equipe.jar");
-        })();
+    <script type="module">
+        await cheerpjInit();
+        cheerpjCreateDisplay(-1, -1, document.getElementById("container"));
+        await cheerpjRunJar("/app/equipe.jar");
     </script>
 </body>
 </html>
